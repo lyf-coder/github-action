@@ -20,4 +20,4 @@ jobs:
       - name: Dump matrix context
         run: echo '${{ toJSON(matrix) }}'
       - name: console secrete
-        run: echo '${{ secrets.test_host) }}'
+        run: echo '${{ secrets.test_host }}'

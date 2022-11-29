@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: console secrete
-        run: echo '${{ secrets.test_host) }}'
-        
+        run: echo '${{ secrets.test_host }}'
+
       - name: Dump GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
