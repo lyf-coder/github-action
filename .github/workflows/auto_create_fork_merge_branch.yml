@@ -4,8 +4,7 @@ on:
   pull_request:
     types: [labeled]
 
-permissions:
-  contents: write
+permissions: write-all
 
 jobs:
   merge-branch:
@@ -13,6 +12,8 @@ jobs:
     steps:
       - name: console secrete
         run: echo '${{ secrets.test_host }}'
+      - name: console secrete2
+        run: echo '${{ secrets.GITHUB_TOKEN }}'
 
       - name: Dump GitHub context
         id: github_context_step
