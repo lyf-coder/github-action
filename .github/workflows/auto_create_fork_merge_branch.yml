@@ -4,7 +4,8 @@ on:
   pull_request:
     types: [labeled]
 
-permissions: write-all
+permissions:
+  contents: write
 
 jobs:
   merge-branch:
