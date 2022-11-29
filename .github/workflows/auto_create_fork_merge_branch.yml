@@ -33,6 +33,6 @@ jobs:
         with:
           label_name: 'merged in cr branch'
           target_branch: 'cr/${{ github.event.pull_request.head.ref }}'
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
