@@ -8,10 +8,10 @@ jobs:
   merge-branch:
     runs-on: ubuntu-latest
     steps:
-       - name: Dump GitHub context
+      - name: Dump GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
-        
+
       - name: create merge cr branch
         uses: peterjgrainger/action-create-branch@v2.2.0
         env:
