@@ -69,3 +69,5 @@ jobs:
           if_no_artifact_found: fail  
       - name: console files
         run: ls          
+      - name: console secrete
+        run: echo '${{ secrets.test_host }}'
