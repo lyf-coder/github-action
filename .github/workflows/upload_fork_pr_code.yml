@@ -1,26 +1,24 @@
+name: Upload fork pr files
 
-name: upload fork pr files
 on:
   pull_request:
-    types: [labeled]
+    branches:
+      - '**'
 
 jobs:
-  merge-branch:
+  upload-fork-pr-files:
+    if: github.event.pull_request.head.repo.fork == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: console files
-        run: ls
 
       - name: save fork pr files
         env:
           PR_NUMBER: ${{ github.event.number }}
         run: |
           echo $PR_NUMBER > ./pr_number
-          
+
       - uses: actions/upload-artifact@v3
         with:
           name: pr_files
-          path: ./       
-
-
+          path: ./
